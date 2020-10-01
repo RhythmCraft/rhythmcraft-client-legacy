@@ -1,0 +1,42 @@
+{
+  "name": "rhythmcraft",
+  "version": "0.0.1",
+  "description": "RhythmCraft Client.",
+  "main": "main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "test": "npx electron .",
+    "build": "npx electron-builder --windows",
+    "publish": "copy \"dist\\RhythmCraft Setup 0.0.1.exe\" \"D:\\Programming\\web\\rhythmcraft\\public\\client-setup.exe\" && copy \"dist\\RhythmCraft-0.0.1-win.zip\" \"D:\\Programming\\web\\rhythmcraft\\public\\client.zip\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wjdgustn/rhythmcraft-client.git"
+  },
+  "author": "Hyonsu",
+  "license": "AGPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/wjdgustn/rhythmcraft-client/issues"
+  },
+  "homepage": "https://github.com/wjdgustn/rhythmcraft-client#readme",
+  "devDependencies": {
+    "electron": "^10.1.3",
+    "electron-builder": "^22.8.1"
+  },
+  "build": {
+    "productName": "RhythmCraft",
+    "appId": "com.hyonsu.RhythmCraft",
+    "asar": true,
+    "win": {
+      "target": [
+        "zip",
+        "nsis"
+      ],
+      "icon": "./icon.ico"
+    }
+  },
+  "dependencies": {
+    "discord-rich-presence": "0.0.8",
+    "electron-prompt": "^1.6.0"
+  }
+}

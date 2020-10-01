@@ -1,0 +1,15 @@
+* {
+    text-align: center;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    display: table;
+}
+#main {
+    display: table-cell;
+    vertical-align: middle;
+}
+#reconnect, #close {
+    margin: 20px;
+}
