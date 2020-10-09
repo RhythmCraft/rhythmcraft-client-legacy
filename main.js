@@ -18,7 +18,7 @@ function createWindow() {
 
     const connection_timeout = setTimeout(() => {
         win.loadFile('./page/connect_failed.html');
-    }, 3000);
+    }, 10000);
 
     win.webContents.once('dom-ready', () => {
         clearTimeout(connection_timeout);
