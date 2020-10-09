@@ -1,14 +1,12 @@
 const { app, BrowserWindow } = require('electron');
 
-
 function createWindow() {
     let win = new BrowserWindow({
         width: 500,
         height: 500,
         webPreferences: {
             nodeIntegration: true,
-            enableRemoteModule: true,
-            devTools: true
+            enableRemoteModule: true
         },
         icon: __dirname + '/icon.ico'
     });
@@ -24,6 +22,11 @@ function createWindow() {
 
     win.webContents.once('dom-ready', () => {
         clearTimeout(connection_timeout);
+    });
+
+    client.on('join', secret => {
+        const params = secret.split('||');
+        win.loadURL(`https://rhythmcraft.hyonsu.com/game?room=${params[0]}#pw=${params[1]}`);
     });
 }
 
